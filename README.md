@@ -24,3 +24,18 @@ This project demonstrates how payment transactions can be recorded, queried, and
 
 ##  Project Structure
 
+## Database Schema
+
+### Users
+- Stores system users (customers or merchants)
+- One user can have many payments
+
+### Payments
+- Core ledger table
+- Records every payment immutably
+- Tracks amount, currency, provider, and status
+
+### Transaction Logs
+- Maintains audit history of payment state changes
+- Enables compliance and reconciliation
+User ────< Payment ────< TransactionLog
